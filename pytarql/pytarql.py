@@ -175,7 +175,7 @@ class PyTarql:
         for triple in trips:
             self._graph.add(triple)
         serialized = self._graph.serialize(
-            format=self._args.output_format).decode('utf-8')
+            format=self._args.output_format)
         # When writing turtle, only emit the namespaces first time
         if self._namespaces_printed and self._args.output_format == 'turtle':
             serialized = serialized.split('\n\n', 1)[1]
